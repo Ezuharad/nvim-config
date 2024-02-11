@@ -16,4 +16,3 @@ require('config.editor')
 require('config.keybinds')
 
 require('lazy').setup('plugins')
-
