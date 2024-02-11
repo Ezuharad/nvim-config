@@ -3,10 +3,9 @@ return {
   version = '*',
   config = function()
     require('toggleterm').setup({
+      open_mapping = '<leader>tt',
       shell = 'zsh'
     })
-
-    vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>')
   end
 }
 

@@ -8,4 +8,5 @@ vim.opt.shiftwidth = 2
 -- misc. options
 vim.opt.number = true
 vim.opt.mouse = ''
+vim.opt.hidden = true
 

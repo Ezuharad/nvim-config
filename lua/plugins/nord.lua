@@ -1,5 +1,5 @@
 return {
-    'shaunsingh/nord.nvim',
+  'shaunsingh/nord.nvim',
   config = function()
     require('nord').set()
 
