@@ -1,8 +1,0 @@
-# 2023 Steven Chiacchira
-import numpy as np
-is_palindrome = lambda s : s[::-1] == s 
-is_palindrome_rh = lambda s, d : s[d] == s[-(d+1)] and (d >= len(s) / 2 or is_palindrome_rh(s, d + 1))
-is_palindrome_r = lambda s : is_palindrome_rh(s, 0)
-
-np.dot()
-
