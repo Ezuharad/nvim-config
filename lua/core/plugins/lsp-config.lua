@@ -7,10 +7,11 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
+
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'clangd',  -- C and C++
+          'clangd', -- C and C++
           'lua_ls'  -- lua
         }
       })
@@ -18,17 +19,26 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
+
+    keys = {
+      {'K', vim.lsp.buf.hover, noremap=true, silent=true, desc='show docs'},
+      {'<leader>ld', vim.lsp.buf.definition, noremap=true, silent=true, desc='jump to definition'},
+      {'<leader>la', vim.lsp.buf.code_action, noremap=true, silent=true, desc='show code actions'}
+    },
+
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require('lspconfig')
 
       local servers = {
-        'clangd',  -- C and C++
-        'lua_ls',  -- lua
+        'clangd',   -- C and C++
+        'lua_ls',   -- lua
+        'marksman', -- markdown
         'pyright',  -- python
         'ruff_lsp', -- python
-        'hls' -- Haskell
+        'hls'       -- Haskell
       }
+
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
           -- on_attach = my_custom_on_attach,
@@ -41,17 +51,13 @@ return {
                 autoSearchPaths = true,
                 diagnosticMode = 'openFilesOnly',
                 useLibraryCodeForTypes = true,
-                typeCheckingMode = 'on'}
+                typeCheckingMode = 'on'
+              }
             }
           },
           capabilities = capabilities,
         }
       end
-
-      -- set keymaps for lsps
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
     end
   }
 }

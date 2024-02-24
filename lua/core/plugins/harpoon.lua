@@ -8,5 +8,6 @@ return {
     local harpoon = require('harpoon')
 
     harpoon:setup()
-  end
+  end,
+  lazy = true
 }
