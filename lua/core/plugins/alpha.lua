@@ -5,7 +5,6 @@ return {
     'nvim-tree/nvim-web-devicons'
   },
 
-
   config = function()
     local alpha = require('alpha')
     local dashboard = require('alpha.themes.dashboard')
@@ -33,13 +32,12 @@ return {
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣿⢿⠟⠘⣿⣿⣗⣻⣦⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢧⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠲⣤⣀⣀⣀⣀⣀⣠⣤⣶⣾⡿⠿⠛⠉⠀⠀⠀⠀⠀⢺⣿⣷⣝⢿⣶⣄⣀⡀⠀⠠⢴⣿⣽⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⢿⣶⣝⡿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-    }
-
+  }
     dashboard.section.buttons.val = {
         dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
-        dashboard.button( "f", "  > Find file", ":cd $HOME/Workspace | Telescope find_files<CR>"),
-        dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
-        dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h<CR>"),
+        dashboard.button( "f", "  > Find file", ":cd $HOME/Code | Telescope find_files <CR>"),
+        dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles <CR>"),
+        dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h<CR> | :Neotree filesystem reveal left <CR>"),
         dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
     }
 

@@ -10,7 +10,8 @@ return {
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'lua_ls'
+          'clangd',  -- C and C++
+          'lua_ls'  -- lua
         }
       })
     end
@@ -22,9 +23,11 @@ return {
       local lspconfig = require('lspconfig')
 
       local servers = {
+        'clangd',  -- C and C++
         'lua_ls',  -- lua
         'pyright',  -- python
-        'ruff_lsp' -- python
+        'ruff_lsp', -- python
+        'hls' -- Haskell
       }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {

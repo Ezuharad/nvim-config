@@ -28,12 +28,24 @@ return {
       dapui.setup()
 
       -- set keybinds
-      vim.keymap.set('n', '<leader>dt', dap.toggle_breakpoint, {})
-      vim.keymap.set('n', '<leader>dc', dap.continue, {})
-      vim.keymap.set('n', '<leader>dd', dap.step_over, {})
-      vim.keymap.set('n', '<leader>dj', dap.step_into, {})
-      vim.keymap.set('n', '<leader>dk', dap.step_out, {})
-      vim.keymap.set('n', '<leader>dh', dap.step_back, {}) -- TODO: check if supported
+      local function map(mode, lhs, rhs, opts)
+        local options = { noremap = true, silent = true }
+        if opts then
+          if opts.desc then
+            opts.desc = "plugins.debug.lua: " .. opts.desc
+          end
+          options = vim.tbl_extend('force', options, opts)
+        end
+        vim.keymap.set(mode, lhs, rhs, options)
+      end
+
+      map('n', '<leader>dt', dap.toggle_breakpoint, { desc = 'toggle breakpoint' })
+      map('n', '<leader>dc', dap.continue, { desc = 'continue' })
+      map('n', '<leader>dl', dap.step_over, { desc = 'step over' })
+      map('n', '<leader>dj', dap.step_into, { desc = 'step into' })
+      map('n', '<leader>dk', dap.step_out, { desc = 'step out' })
+      map('n', '<leader>dh', dap.step_back, { desc = 'step back' })  -- TODO: check if supported
+      map('n', '<leader>dq', dap.close, { desc = 'stop debugger' })
     end
   },
   {
