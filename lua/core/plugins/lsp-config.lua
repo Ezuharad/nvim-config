@@ -31,8 +31,10 @@ return {
 
     keys = {
       { 'K',          vim.lsp.buf.hover,       noremap = true, silent = true, desc = 'show docs' },
-      { '<leader>rd', vim.lsp.buf.definition,  noremap = true, silent = true, desc = 'jump to definition' },
-      { '<leader>ra', vim.lsp.buf.code_action, noremap = true, silent = true, desc = 'show code actions' }
+      { '<leader>jd', vim.lsp.buf.definition,  noremap = true, silent = true, desc = 'jump to definition' },
+      { '<leader>jr', vim.lsp.buf.references,  noremap = true, silent = true, desc = 'jump to references' },
+      { '<leader>ra', vim.lsp.buf.code_action, noremap = true, silent = true, desc = 'show code actions' },
+      { '<leader>rn', vim.lsp.buf.rename,      noremap = true, silent = true, desc = 'rename symbol' }
     },
 
     config = function()

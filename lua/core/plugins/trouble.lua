@@ -7,11 +7,16 @@ return {
   opts = {},
 
   config = function()
-    vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
-    vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
-    vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
-    vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
-    vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
+    local trouble = require('trouble')
+    vim.keymap.set("n", "<leader>xx", function() trouble.toggle() end,
+      { noremap = true, silent = true, desc = 'show trouble diagnostics' })
+    vim.keymap.set("n", "<leader>xw", function() trouble.toggle("workspace_diagnostics") end,
+      { noremap = true, silent = true, desc = 'show workspace diagnostics' })
+    vim.keymap.set("n", "<leader>xd", function() trouble.toggle("document_diagnostics") end,
+      { noremap = true, silent = true, desc = 'show document diagnostics' })
+    vim.keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end,
+      { noremap = true, silent = true, desc = 'show quickfixes' })
+    -- vim.keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end)
   end,
 
   lazy = false
