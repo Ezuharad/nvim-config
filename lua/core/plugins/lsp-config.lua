@@ -11,7 +11,7 @@ return {
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'lua_ls'  -- lua
+          'lua_ls' -- lua
         }
       })
     end
@@ -20,9 +20,9 @@ return {
     'neovim/nvim-lspconfig',
 
     keys = {
-      {'K', vim.lsp.buf.hover, noremap=true, silent=true, desc='show docs'},
-      {'<leader>ld', vim.lsp.buf.definition, noremap=true, silent=true, desc='jump to definition'},
-      {'<leader>la', vim.lsp.buf.code_action, noremap=true, silent=true, desc='show code actions'}
+      { 'K',          vim.lsp.buf.hover,       noremap = true, silent = true, desc = 'show docs' },
+      { '<leader>ld', vim.lsp.buf.definition,  noremap = true, silent = true, desc = 'jump to definition' },
+      { '<leader>la', vim.lsp.buf.code_action, noremap = true, silent = true, desc = 'show code actions' }
     },
 
     config = function()
@@ -31,11 +31,13 @@ return {
 
       local servers = {
         'clangd',   -- C and C++
+        'cssls',      -- CSS
         'lua_ls',   -- lua
-        'marksman', -- markdown
+        'ltex',     -- markdown and LaTeX
         'pyright',  -- python
-        'ruff_lsp', -- python
-        'hls'       -- Haskell
+        'ruff_lsp',
+        'hls',       -- Haskell
+        'html',     -- HTML
       }
 
       for _, lsp in ipairs(servers) do

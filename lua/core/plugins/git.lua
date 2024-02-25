@@ -3,12 +3,14 @@ return {
     'lewis6991/gitsigns.nvim',
 
     keys = {
-      {'<leader>gp', ':Gitsigns preview_hunk, <CR>', noremap = true, silent=true, desc='preview git hunk'}
+      { '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', noremap = true, silent = true, desc = 'preview git hunk' }
     },
 
     config = function()
       require('gitsigns').setup()
     end,
+
+    lazy = false
   },
   {
     'tpope/vim-fugitive',
@@ -22,7 +24,8 @@ return {
       'nvim-telescope/telescope.nvim',
     },
 
-    config = true
+    config = function()
+    end
   },
   {
     'kdheepak/lazygit.nvim',
@@ -32,7 +35,7 @@ return {
     },
 
     keys = {
-      {'<leader>gg', ':LazyGit <CR>', noremap=true, silent=true, desc='open LazyGit'}
+      { '<leader>gg', '<cmd>LazyGit<cr>', noremap = true, silent = true, desc = 'open LazyGit' }
     },
 
     lazy = true

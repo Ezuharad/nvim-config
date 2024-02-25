@@ -11,7 +11,7 @@ return {
     },
 
     keys = {
-      { '<leader>wf', ':Neotree filesystem reveal left<CR>', noremap=true, silent=true, desc = 'toggle neotree' },
+      { '<leader>wf', '<cmd>Neotree filesystem reveal left<cr>', noremap = true, silent = true, desc = 'toggle neotree' },
     },
 
     config = function()
@@ -19,6 +19,6 @@ return {
       nvimtree.setup()
     end,
 
-    lazy = true
+    lazy = false
   }
 }

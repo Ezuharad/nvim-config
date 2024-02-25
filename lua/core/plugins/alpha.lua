@@ -34,11 +34,11 @@ return {
       '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⢿⣶⣝⡿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
   }
     dashboard.section.buttons.val = {
-        dashboard.button( 'e', '  > New file' , ':ene <BAR> startinsert <CR>'),
-        dashboard.button( 'f', '  > Find file', ':cd $HOME/Code | Telescope find_files <CR>'),
-        dashboard.button( 'r', '  > Recent'   , ':Telescope oldfiles <CR>'),
-        dashboard.button( 's', '  > Settings' , ':e $MYVIMRC | :cd %:p:h<CR>'),
-        dashboard.button( 'q', '  > Quit NVIM', ':qa<CR>'),
+        dashboard.button( 'e', '  > New file' , '<cmd>ene <bar> startinsert <cr>'),
+        dashboard.button( 'f', '  > Find file', '<cmd>cd $HOME/Code <cr>| Telescope find_files <cr>'),
+        dashboard.button( 'r', '  > Recent'   , '<cmd>Telescope oldfiles <cr>'),
+        dashboard.button( 's', '  > Settings' , '<cmd>e $MYVIMRC <cr>| <cmd>cd %:p:h<cr>'),
+        dashboard.button( 'q', '  > Quit NVIM', '<cmd>qa<cr>'),
     }
 
     alpha.setup(dashboard.opts)

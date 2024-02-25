@@ -8,7 +8,12 @@ return {
 
   opts = {
     options = {
-      theme = 'auto'
+     theme = 'auto'
     },
-  }
+  },
+
+  config = function()
+    local lualine = require('lualine')
+    lualine.setup()
+  end
 }

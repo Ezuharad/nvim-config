@@ -15,11 +15,11 @@ return {
     'github/copilot.vim', -- GitHub Copilot
 
     keys = {
-      { '<leader>cg', ':Copilot <CR>', noremap = true, silent = true, desc = 'generate suggestions' },
+      { '<leader>cg', '<cmd>Copilot<cr>', noremap = true, silent = true, desc = 'generate suggestions' },
       { '<leader>ct', toggle_copilot,  noremap = true, silent = true, desc = 'toggle assistant' }
     },
 
-    build = ':Copilot setup',
+    build = '<cmd>Copilot setup<cr>',
 
     config = function()
       vim.cmd('Copilot disable')
