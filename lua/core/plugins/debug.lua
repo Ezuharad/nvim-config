@@ -14,8 +14,12 @@ return {
     config = function()
       local dap = require('dap')
 
-      vim.keymap.set('n', '<leader>dt', dap.toggle_breakpoint, { noremap = true, silent = true, desc =
-      'toggle breakpoint' })                                                                                          -- TODO: why can't we use keys property?
+      vim.keymap.set('n', '<leader>dt', dap.toggle_breakpoint, {
+        noremap = true,
+        silent = true,
+        desc =
+        'toggle breakpoint'
+      })                     -- TODO: why can't we use keys property?
       vim.keymap.set('n', '<leader>dc', dap.continue, { noremap = true, silent = true, desc = 'continue debugging' })
       vim.keymap.set('n', '<leader>dl', dap.step_over, { noremap = true, silent = true, desc = 'step over' })
       vim.keymap.set('n', '<leader>dj', dap.step_into, { noremap = true, silent = true, desc = 'step into' })

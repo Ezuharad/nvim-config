@@ -5,7 +5,7 @@ return {
     version = '*',
 
     keys = {
-      { '<leader>wt', ':ToggleTerm <CR>', noremap = true, silent = true, desc = 'toggle terminal' }
+      { '<leader>vt', '<cmd>ToggleTerm<cr>', noremap = true, silent = true, desc = 'toggle terminal' }
     },
 
     config = function()

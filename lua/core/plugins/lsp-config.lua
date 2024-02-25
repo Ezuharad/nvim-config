@@ -1,8 +1,18 @@
 return {
   {
     'williamboman/mason.nvim',
+
     config = function()
-      require('mason').setup()
+      require('mason').setup({
+        ui = {
+          border = 'single',
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
     end
   },
   {
@@ -21,8 +31,8 @@ return {
 
     keys = {
       { 'K',          vim.lsp.buf.hover,       noremap = true, silent = true, desc = 'show docs' },
-      { '<leader>ld', vim.lsp.buf.definition,  noremap = true, silent = true, desc = 'jump to definition' },
-      { '<leader>la', vim.lsp.buf.code_action, noremap = true, silent = true, desc = 'show code actions' }
+      { '<leader>rd', vim.lsp.buf.definition,  noremap = true, silent = true, desc = 'jump to definition' },
+      { '<leader>ra', vim.lsp.buf.code_action, noremap = true, silent = true, desc = 'show code actions' }
     },
 
     config = function()
@@ -30,14 +40,14 @@ return {
       local lspconfig = require('lspconfig')
 
       local servers = {
-        'clangd',   -- C and C++
-        'cssls',      -- CSS
-        'lua_ls',   -- lua
-        'ltex',     -- markdown and LaTeX
-        'pyright',  -- python
+        'clangd',  -- C and C++
+        'cssls',   -- CSS
+        'lua_ls',  -- lua
+        'ltex',    -- markdown and LaTeX
+        'pyright', -- python
         'ruff_lsp',
-        'hls',       -- Haskell
-        'html',     -- HTML
+        'hls',     -- Haskell
+        'html',    -- HTML
       }
 
       for _, lsp in ipairs(servers) do

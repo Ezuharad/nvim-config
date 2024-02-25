@@ -11,7 +11,7 @@ return {
     },
 
     keys = {
-      { '<leader>wf', '<cmd>Neotree filesystem reveal left<cr>', noremap = true, silent = true, desc = 'toggle neotree' },
+      { '<leader>vf', '<cmd>Neotree filesystem reveal left<cr>', noremap = true, silent = true, desc = 'toggle neotree' },
     },
 
     config = function()

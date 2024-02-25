@@ -6,7 +6,8 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
 -- misc. options
-vim.opt.rnu = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 vim.opt.mouse = ''
 vim.opt.hidden = true
 

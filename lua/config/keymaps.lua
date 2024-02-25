@@ -17,6 +17,7 @@ map('n', '[o', '<cmd>call search(\'[{]\')<cr>', { desc = 'jump to next {' })
 map('n', '[i', '<cmd>call search(\'[[]\')<cr>', { desc = 'jump to next [' })
 map('n', '[u', '<cmd>call search(\'[<]\')<cr>', { desc = 'jump to next <' })
 
+-- arrow keys
 map('n', '<up>', '<c-w><up>', { desc = 'move up window' })
 map('n', '<down>', '<c-w><down>', { desc = 'move down window' })
 map('n', '<left>', '<c-w><left>', { desc = 'move left window' })
@@ -31,3 +32,12 @@ map('v', '<up>', '<nop>')
 map('v', '<down>', '<nop>')
 map('v', '<left>', '<nop>')
 map('v', '<right>', '<nop>')
+
+-- autoclose braces
+-- map('i', '\"', '\"\"<esc>i')
+-- map('i', '\'', '\'\'<esc>i')
+-- map('i', '(', '()<esc>i')
+-- map('i', '[', '[]<esc>i')
+-- map('i', '{', '{}<esc>i')
+
+-- map('i', '()')
