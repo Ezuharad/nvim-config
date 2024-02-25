@@ -1,4 +1,4 @@
-return  {
+return {
   {
     'nvim-telescope/telescope.nvim',
 
@@ -9,8 +9,8 @@ return  {
     },
 
     keys = {
-      {'<leader>ff', require('telescope.builtin').find_files, noremap=true, silent=true, desc='Search files'},
-      {'<leader>fg', require('telescope.builtin').live_grep, noremap=true, silent=true, desc='Search in file'}
+      { '<leader>ff', require('telescope.builtin').find_files, noremap = true, silent = true, desc = 'search files' },
+      { '<leader>fg', require('telescope.builtin').live_grep,  noremap = true, silent = true, desc = 'search in file' }
     },
 
     lazy = true
@@ -32,4 +32,3 @@ return  {
     lazy = true
   }
 }
-

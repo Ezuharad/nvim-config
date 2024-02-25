@@ -8,7 +8,7 @@ return {
 
   opts = {
     options = {
-      theme = 'nord'
-    }
+      theme = 'auto'
+    },
   }
 }
