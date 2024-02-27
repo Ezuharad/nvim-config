@@ -17,6 +17,10 @@ map('n', '[o', '<cmd>call search(\'[{]\')<cr>', { desc = 'jump to next {' })
 map('n', '[i', '<cmd>call search(\'[[]\')<cr>', { desc = 'jump to next [' })
 map('n', '[u', '<cmd>call search(\'[<]\')<cr>', { desc = 'jump to next <' })
 
+-- jump half page
+map('n', '<c-u>', '<c-u>zz')
+map('n', '<c-d>', '<c-d>zz')
+
 -- arrow keys
 map('n', '<up>', '<nop>')
 map('n', '<down>', '<nop>')

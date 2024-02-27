@@ -22,8 +22,8 @@ return {
     event='VeryLazy',
 
     keys = {
-      {'<leader>es', '<cmd>VenvSelect<cr>', noremap=true, silent=true, desc='search virtual environments'},
-      {'<leader>ec', '<cmd>VenvSelectCached<cr>', noremap=true, silent=true, desc='activate cached virutal environment'}
+      {'<leader>fe', '<cmd>VenvSelect<cr>', noremap=true, silent=true, desc='search virtual environments'},
+      -- {'<leader>ec', '<cmd>VenvSelectCached<cr>', noremap=true, silent=true, desc='activate cached virutal environment'}
     }
   }
 }

@@ -20,6 +20,6 @@ return {
     local session_lens = require('auto-session.session-lens')
 
     -- keymaps
-    vim.keymap.set('n', '<leader>fs', session_lens.search_session, { noremap = true, silent = true, desc = 'search sessions' })
+    -- vim.keymap.set('n', '<leader>fs', session_lens.search_session, { noremap = true, silent = true, desc = 'search sessions' })
   end
 }
