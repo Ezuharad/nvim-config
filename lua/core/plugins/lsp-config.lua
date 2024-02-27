@@ -13,7 +13,9 @@ return {
           }
         }
       })
-    end
+    end,
+
+    lazy = true
   },
   {
     'williamboman/mason-lspconfig.nvim',
@@ -42,19 +44,33 @@ return {
       local lspconfig = require('lspconfig')
 
       local servers = {
-        'clangd',  -- C and C++
-        'cssls',   -- CSS
-        'lua_ls',  -- lua
-        'ltex',    -- markdown and LaTeX
+        'clangd', -- C and C++
+        'cssls', -- CSS
+        'lua_ls', -- lua
+        'ltex',  -- markdown and LaTeX
         'pyright', -- python
-        'ruff_lsp',
-        'hls',     -- Haskell
-        'html',    -- HTML
+        -- 'ruff_lsp',
+        'hls',   -- Haskell
+        'html',  -- HTML
       }
+
+      local handlers = {
+        ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' }),
+        ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'single' }),
+      }
+
+      -- Add border to the diagnostic popup window
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+        },
+        float = { border = 'single' },
+      })
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
           -- on_attach = my_custom_on_attach,
+          handlers = handlers,
           settings = {
             pyright = {
               autoImportCompletion = true

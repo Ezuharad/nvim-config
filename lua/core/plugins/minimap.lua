@@ -1,12 +1,14 @@
 -- code minimap
 return {
   {
-    'wfxr/minimap.vim',
+    'gorbit99/codewindow.nvim',
 
-    keys = {
-      { '<leader>vm', '<cmd>MinimapToggle<cr>', noremap=true, silent=true, desc='toggle minimap' }
-    },
+    config = function()
+      local codewindow = require('codewindow')
+      codewindow.setup()
 
-    lazy = true
+      vim.keymap.set('n', '<leader>vm', codewindow.toggle_minimap, { noremap = true, silent = true, desc =
+      'toggle minimap' })
+    end,
   }
 }

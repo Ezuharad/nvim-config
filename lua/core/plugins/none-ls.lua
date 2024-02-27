@@ -6,14 +6,19 @@ return {
   config = function()
     local null_ls = require('null-ls')
     null_ls.setup({
-      -- lua
-      null_ls.builtins.formatting.stylua,
+      sources = {
+        -- lua
+        null_ls.builtins.formatting.stylua,
 
-      -- markdown
-      null_ls.builtins.formatting.markdownlint,
+        -- markdown
+        null_ls.builtins.formatting.markdownlint,
 
-      -- python
-      null_ls.builtins.formatting.black,
+        -- python
+        null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.black,
+      }
     })
-  end
+  end,
+
+  lazy = false
 }

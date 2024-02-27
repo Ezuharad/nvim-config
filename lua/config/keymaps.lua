@@ -18,10 +18,10 @@ map('n', '[i', '<cmd>call search(\'[[]\')<cr>', { desc = 'jump to next [' })
 map('n', '[u', '<cmd>call search(\'[<]\')<cr>', { desc = 'jump to next <' })
 
 -- arrow keys
-map('n', '<up>', '<c-w><up>', { desc = 'move up window' })
-map('n', '<down>', '<c-w><down>', { desc = 'move down window' })
-map('n', '<left>', '<c-w><left>', { desc = 'move left window' })
-map('n', '<right>', '<c-w><right>', { desc = 'move right window' })
+map('n', '<up>', '<nop>')
+map('n', '<down>', '<nop>')
+map('n', '<left>', '<nop>')
+map('n', '<right>', '<nop>')
 
 map('i', '<up>', '<nop>')
 map('i', '<down>', '<nop>')
