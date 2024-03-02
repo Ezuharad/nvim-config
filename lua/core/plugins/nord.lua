@@ -1,11 +1,18 @@
 return {
-  'shaunsingh/nord.nvim',
+  "shaunsingh/nord.nvim",
   config = function()
-    require('nord').set()
+    vim.g.nord_contrast = true
+    vim.g.nord_borders = true
+    vim.g.nord_disable_background = false
+    vim.g.nord_italic = true
+    vim.g.nord_uniform_diff_background = true
+    vim.g.nord_bold = true
 
     require("nord").bufferline.highlights({
       italic = true,
       bold = true,
     })
-  end
+
+    require("nord").set()
+  end,
 }

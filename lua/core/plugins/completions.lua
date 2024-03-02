@@ -1,22 +1,22 @@
 -- snippets support
 return {
   {
-    'L3MON4d3/LuaSnip',
+    "L3MON4d3/LuaSnip",
     dependencies = {
-      'saadparwaiz1/cmp_luasnip',
-      'rafamadriz/friendly-snippets'
-    }
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    },
   },
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     config = function()
-      local cmp = require 'cmp'
-      require('luasnip.loaders.from_vscode').lazy_load()
+      local cmp = require("cmp")
+      require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
         snippet = {
           expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            require("luasnip").lsp_expand(args.body)
           end,
         },
         window = {
@@ -24,25 +24,35 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
-          ['<c-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<c-f>'] = cmp.mapping.scroll_docs(4),
-          ['<c-space>'] = cmp.mapping.complete(),
-          ['<c-e>'] = cmp.mapping.abort(),
-          ['<cr>'] = cmp.mapping.confirm({ select = true }),
+          ["<c-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<c-f>"] = cmp.mapping.scroll_docs(4),
+          ["<c-space>"] = cmp.mapping.complete(),
+          ["<c-e>"] = cmp.mapping.abort(),
+          ["<cr>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
         }, {
-          { name = 'buffer' },
-        })
+          { name = "buffer" },
+        }),
       })
-    end
+
+      -- commandline setup
+      cmp.setup.cmdline(":", {
+        sources = {
+          { name = "cmdline" },
+        },
+        formatting = {
+          fields = { "abbr" },
+        },
+      })
+    end,
   },
   {
-    'hrsh7th/cmp-nvim-lsp',
+    "hrsh7th/cmp-nvim-lsp",
   },
   {
-    'rafamadriz/friendly-snippets' -- vscode snippets
-  }
+    "rafamadriz/friendly-snippets", -- vscode snippets
+  },
 }

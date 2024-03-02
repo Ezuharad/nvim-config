@@ -40,9 +40,6 @@ return {
     },
 
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require('lspconfig')
-
       local servers = {
         'clangd', -- C and C++
         'cssls', -- CSS
@@ -59,14 +56,10 @@ return {
         ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'single' }),
       }
 
-      -- Add border to the diagnostic popup window
-      vim.diagnostic.config({
-        virtual_text = {
-          prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
-        },
-        float = { border = 'single' },
-      })
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local lspconfig = require('lspconfig')
 
+      -- attach lsps
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
           -- on_attach = my_custom_on_attach,
@@ -87,6 +80,18 @@ return {
           capabilities = capabilities,
         }
       end
+
+      -- Add border to the diagnostic popup window
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+        },
+        float = { border = 'single' },
+      })
+
+      -- Add border to :LspInfo window
+      require('lspconfig.ui.windows').default_options.border = 'single'
+
     end
   }
 }

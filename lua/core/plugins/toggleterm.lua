@@ -12,8 +12,10 @@ return {
       local toggleterm = require('toggleterm')
       toggleterm.setup({
         insert_mappings = false,
+        persist_mode = true,
         terminal_mappings = true,
         shade_terminals = true,
+        start_in_insert = true,
         shell = 'zsh',
         size = 25
       })

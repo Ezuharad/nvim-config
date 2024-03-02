@@ -1,42 +1,51 @@
 return {
   {
-    'mfussenegger/nvim-dap-python',
+    "mfussenegger/nvim-dap-python",
 
     config = function()
-      require('dap-python').setup('/usr/bin/python')
+      require("dap-python").setup("/usr/bin/python")
     end,
 
-    lazy = true
+    lazy = true,
   },
   {
-    'mfussenegger/nvim-dap',
+    "mfussenegger/nvim-dap",
 
     config = function()
-      local dap = require('dap')
+      local dap = require("dap")
 
-      vim.keymap.set('n', '<leader>dt', dap.toggle_breakpoint, {
+      vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, {
         noremap = true,
         silent = true,
-        desc =
-        'toggle breakpoint'
-      })                     -- TODO: why can't we use keys property?
-      vim.keymap.set('n', '<leader>dc', dap.continue, { noremap = true, silent = true, desc = 'continue debugging' })
-      vim.keymap.set('n', '<leader>dl', dap.step_over, { noremap = true, silent = true, desc = 'step over' })
-      vim.keymap.set('n', '<leader>dj', dap.step_into, { noremap = true, silent = true, desc = 'step into' })
-      vim.keymap.set('n', '<leader>dk', dap.step_out, { noremap = true, silent = true, desc = 'step out' })
-      vim.keymap.set('n', '<leader>dh', dap.step_back, { noremap = true, silent = true, desc = 'step back' })
-      vim.keymap.set('n', '<leader>dq', dap.close, { noremap = true, silent = true, desc = 'stop debugger' })
+        desc = "toggle breakpoint",
+      })
+      vim.keymap.set(
+        "n",
+        "<leader>dc",
+        dap.continue,
+        { noremap = true, silent = true, desc = "continue debugger" }
+      )
+
+      vim.keymap.set("n", "<leader>dl", dap.step_over, { noremap = true, silent = true, desc = "step over" })
+      vim.keymap.set("n", "<leader>dj", dap.step_into, { noremap = true, silent = true, desc = "step into" })
+      vim.keymap.set("n", "<leader>dk", dap.step_out, { noremap = true, silent = true, desc = "step out" })
+      vim.keymap.set("n", "<leader>dh", dap.step_back, { noremap = true, silent = true, desc = "step back" })
+      vim.keymap.set("n", "<leader>dq", dap.close, { noremap = true, silent = true, desc = "stop debugger" })
     end,
+
+    lazy = true,
   },
   {
-    'rcarriga/nvim-dap-ui',
+    "rcarriga/nvim-dap-ui",
 
     dependencies = {
-      'mfussenegger/nvim-dap'
+      "mfussenegger/nvim-dap",
     },
 
+    opts = {},
+
     config = function()
-      local dap, dapui = require('dap'), require('dapui')
+      local dap, dapui = require("dap"), require("dapui")
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
       end
@@ -50,25 +59,25 @@ return {
         dapui.close()
       end
 
+      vim.keymap.set("n", "<leader>vd", dapui.toggle, { noremap = true, silent = true, desc = "View debugger" })
+
       dapui.setup()
     end,
-
-    lazy = true
   },
   {
-    'folke/neodev.nvim',
+    "folke/neodev.nvim",
 
     opts = {},
 
     config = function()
-      require('neodev').setup({
+      require("neodev").setup({
         library = {
-          plugins = { 'nvim-dap-ui' },
-          types = true
+          plugins = { "nvim-dap-ui" },
+          types = true,
         },
       })
     end,
 
-    lazy = true
-  }
+    lazy = true,
+  },
 }

@@ -1,19 +1,20 @@
 return {
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
 
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    opt = true
+    "nvim-tree/nvim-web-devicons",
+    opt = true,
   },
 
   opts = {
     options = {
-     theme = 'auto'
+      icons_enabled = true,
+      theme = "auto",
     },
   },
 
   config = function()
-    local lualine = require('lualine')
+    local lualine = require("lualine")
     lualine.setup()
-  end
+  end,
 }
