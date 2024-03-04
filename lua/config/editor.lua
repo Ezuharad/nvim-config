@@ -9,6 +9,13 @@ vim.opt.shiftwidth = 2
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = false
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- enable termcolor
+vim.opt.termguicolors = true
+
 -- misc. options
 vim.wo.number = true
 vim.wo.relativenumber = true
