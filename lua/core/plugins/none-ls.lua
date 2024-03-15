@@ -15,9 +15,10 @@ return {
 
         -- python
         null_ls.builtins.formatting.isort,
-        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.ruff
       }
     })
+    vim.lsp.buf.format({timeout_ms = 5000})
   end,
 
   lazy = false

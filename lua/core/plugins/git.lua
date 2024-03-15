@@ -7,7 +7,8 @@ return {
     },
 
     config = function()
-      require('gitsigns').setup()
+      local gitsigns = require('gitsigns')
+      gitsigns.setup()
     end,
 
     lazy = false
@@ -23,9 +24,6 @@ return {
       'sindrets/diffview.nvim',
       'nvim-telescope/telescope.nvim',
     },
-
-    config = function()
-    end
   },
   {
     'kdheepak/lazygit.nvim',

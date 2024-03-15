@@ -10,5 +10,5 @@ return {
 
   opts = {},
 
-  lazy = false
+  lazy = false,
 }
