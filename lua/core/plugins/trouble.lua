@@ -16,7 +16,6 @@ return {
       { noremap = true, silent = true, desc = 'show document diagnostics' })
     vim.keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end,
       { noremap = true, silent = true, desc = 'show quickfixes' })
-    -- vim.keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end)
   end,
 
   lazy = false
